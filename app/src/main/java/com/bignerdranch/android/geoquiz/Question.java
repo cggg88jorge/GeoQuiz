@@ -1,28 +1,28 @@
-***REMOVED***
+package com.bignerdranch.android.geoquiz;
 
-***REMOVED***
+public class Question {
 
-***REMOVED***
-***REMOVED***
+    private int mTextResId;
+    private boolean mAnswerTrue;
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    public Question(int textResId, boolean answerTrue){
+        mTextResId = textResId;
+        mAnswerTrue =answerTrue;
+    }
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    public boolean isAnswerTrue() {
+        return mAnswerTrue;
+    }
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    public void setAnswerTrue(boolean answerTrue) {
+        mAnswerTrue = answerTrue;
+    }
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    public void setTextResId(int textResId) {
+        mTextResId = textResId;
+    }
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    public int getTextResId() {
+        return mTextResId;
+    }
+}

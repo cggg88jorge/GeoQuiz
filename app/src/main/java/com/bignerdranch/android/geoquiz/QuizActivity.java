@@ -1,4 +1,4 @@
-***REMOVED***
+package com.bignerdranch.android.geoquiz;
 
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -30,25 +30,25 @@ public class QuizActivity extends AppCompatActivity {
             new Question(R.string.question_africa, false),
             new Question(R.string.question_americas, true),
             new Question(R.string.question_asia, true),
-***REMOVED***;
+    };
 
     private int mCurrentIndex = 0;
 
     private void updateQuestion(){
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
-***REMOVED***
+    }
 
     private void checkAnswer(boolean userPressedTrue){
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
         int messageResId = 0;
         if(userPressedTrue == answerIsTrue){
             messageResId = R.string.correct_toast;
-    ***REMOVED***else{
+        }else{
             messageResId = R.string.incorrect_toast;
-    ***REMOVED***
+        }
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
-***REMOVED***
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (savedInstanceState != null){
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
-    ***REMOVED***
+        }
 
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
 
@@ -67,15 +67,15 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 checkAnswer(true);
-        ***REMOVED***
-    ***REMOVED***);
+            }
+        });
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 checkAnswer(false);
-        ***REMOVED***
-    ***REMOVED***);
+            }
+        });
 
         mNextButton = (Button) findViewById(R.id.next_button);
         mNextButton.setOnClickListener(new View.OnClickListener(){
@@ -83,25 +83,25 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View v){
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                 updateQuestion();
-        ***REMOVED***
-    ***REMOVED***);
+            }
+        });
 
         updateQuestion();
-***REMOVED***
+    }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         Log.i(TAG, "onSaveInstanceState");
         savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
-***REMOVED***
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_quiz, menu);
         return true;
-***REMOVED***
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -113,32 +113,32 @@ public class QuizActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-    ***REMOVED***
+        }
 
         return super.onOptionsItemSelected(item);
-***REMOVED***
+    }
 
     @Override
     public void onStart(){
         super.onStart();
         Log.d(TAG, "onStart() called");
-***REMOVED***
+    }
 
     @Override
     public void onPause(){
         super.onPause();
         Log.d(TAG, "onPause() called");
-***REMOVED***@Override
+    }@Override
     public void onResume(){
         super.onResume();
         Log.d(TAG, "onResume() called");
-***REMOVED***@Override
+    }@Override
     public void onStop(){
         super.onStop();
         Log.d(TAG, "onStop() called");
-***REMOVED***@Override
+    }@Override
     public void onDestroy(){
         super.onDestroy();
         Log.d(TAG, "onDestroy() called");
-***REMOVED***
-***REMOVED***
+    }
+}
